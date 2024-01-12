@@ -1,6 +1,7 @@
 <script>
-import { store } from "./store";
 import axios from 'axios';
+import { store } from "./store";
+
 
 import SearchBar from './components/SearchBar.vue'
 import CardsList from './components/CardsList.vue'
@@ -12,18 +13,34 @@ export default {
   },
   data() {
     return {
-
+      store
     }
   },
   methods: {
+    reciveEmit() {
+      //create variable that allow us to create the filtered arrey
+      let urlFilteredFilms = `${store.urlFilms}${store.apiKey}&query=${store.searchValue}`
 
-  }
+      //array with the scope of contain the serched film
+      store.arrayFilms = [];
+
+      //creation of it with axios
+      axios.get(urlFilteredFilms).then(response => {
+        store.arrayFilms = [...response.data.results];
+
+      })
+
+    }
+  },
+  created() {
+
+  },
 }
 </script>
 <template lang="">
   <div>
     <header>
-      <SearchBar />
+      <SearchBar @SearchTitle='reciveEmit' />
     </header>
   </div>
 </template>
