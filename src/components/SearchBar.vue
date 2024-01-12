@@ -1,10 +1,11 @@
 <script>
 export default {
-    name: 'Header'
+  name: 'SearchBar'
 }
 </script>
 <template lang="">
   <div>
+    <input type="text" placeholder='inserisci una scritta' >
     
   </div>
 </template>

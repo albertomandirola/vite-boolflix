@@ -1,10 +1,13 @@
 <script>
-import Header from './components/AppHeader.vue'
+import { store } from "./store";
+import axios from 'axios';
+
+import SearchBar from './components/SearchBar.vue'
 import CardsList from './components/CardsList.vue'
 
 export default {
   components: {
-    Header,
+    SearchBar,
     CardsList
   },
   data() {
@@ -12,11 +15,16 @@ export default {
 
     }
   },
+  methods: {
+
+  }
 }
 </script>
 <template lang="">
   <div>
-    
+    <header>
+      <SearchBar />
+    </header>
   </div>
 </template>
 <style lang="">
