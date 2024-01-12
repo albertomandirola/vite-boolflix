@@ -27,6 +27,7 @@ export default {
       //creation of it with axios
       axios.get(urlFilteredFilms).then(response => {
         store.arrayFilms = [...response.data.results];
+        console.log(store.arrayFilms);
 
       })
 
@@ -41,7 +42,10 @@ export default {
   <div>
     <header>
       <SearchBar @SearchTitle='reciveEmit' />
+      
+
     </header>
+    <main><CardsList /></main>
   </div>
 </template>
 <style lang="">
