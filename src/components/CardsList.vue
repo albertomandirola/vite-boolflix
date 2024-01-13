@@ -21,13 +21,21 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="col" v-for="(card, index) in store.arrayFilms" :key="index">
-        <CardMakerFilm :card='card'/>
+    <div class="row">
+        <div class="my-col border" v-for="(card, index) in store.arrayFilms" :key="index">
+            <CardMakerFilm :card='card'/>
+        </div>
+        <div class="my-col border" v-for="(card, index) in store.arraySeries" :key="index">
+            <CardMakerSeries :card='card'/>
+        </div>
     </div>
-    <div class="col" v-for="(card, index) in store.arraySeries" :key="index">
-        <CardMakerSeries :card='card'/>
-    </div>
+   
 </template>
-<style lang="">
-    
+<style lang="scss" scoped>
+@use '../styles/generals.scss' as *;
+@use '../styles/partials/bootstrap' as *;
+
+.my-col {
+    width: 342px;
+}
 </style>
