@@ -46,13 +46,23 @@ export default {
 }
 </script>
 <template lang="">
-  <div>
+  <div class="bg-black">
     <header>
-      <SearchBar @SearchTitle='reciveEmit' />
+      <div class="container d-flex justify-content-between">
+        <img :src="store.urlLogo" alt="">
+        <SearchBar @SearchTitle='reciveEmit' />
+      </div>
     </header>
-    <main><CardsList /></main>
+    <main>
+      <div class="container">
+        <CardsList />
+      </div>
+    </main>
   </div>
+  
+  
 </template>
 <style lang="scss" scoped>
 @use './styles/generals.scss' as *;
+@use './styles/partials/bootstrap' as *;
 </style>

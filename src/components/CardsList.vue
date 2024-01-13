@@ -21,14 +21,17 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="row">
+    <div class="row justify-content-center gap-3">
         <div class="my-col border" v-for="(card, index) in store.arrayFilms" :key="index">
             <CardMakerFilm :card='card'/>
         </div>
+    </div>
+    <div class="row justify-content-center gap-3">
         <div class="my-col border" v-for="(card, index) in store.arraySeries" :key="index">
             <CardMakerSeries :card='card'/>
         </div>
     </div>
+    
    
 </template>
 <style lang="scss" scoped>

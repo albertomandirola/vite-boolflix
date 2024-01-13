@@ -45,13 +45,17 @@ export default {
             <img :src="imgUrl" alt="">
         </div>
         
-        <div class="card-title">Titolo:{{card.name}}</div>    
-        <div class="card-title">{{card.original_name}}</div>
-        <div>
+        <div class="card-title"><strong>Titolo:</strong> {{card.name}}</div>    
+        <div class="card-title"><strong>Titolo originale:</strong> {{card.original_name}}</div>
+        <div class='card-original-language d-flex align-items-center'>
+            <div><strong>OL: </strong></div>
             <img :src="FlagUrl"> 
         </div>
-        <div class="card-vot" v-for='i in vote'><i class="bi bi-star"></i></div>
-        <div class="card-vot" v-for='i in missedStar'><i class="bi bi-star"></i></div>   
+        <div class="d-flex">
+          <div><strong>Voto: </strong></div>
+          <div class="star" v-for='i in vote'>si</div>
+          <div class="not-star" v-for='i in missedStar'>no</div>  
+        </div>  
     </div>
 </div>
 </template>
@@ -63,5 +67,9 @@ export default {
     width: 342px;
     min-height: 513px;
     background-color: black;
+}
+
+.card-infos>div {
+    margin-top: 10px;
 }
 </style>

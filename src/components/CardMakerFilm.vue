@@ -34,13 +34,16 @@ export default {
         <div class="poster-container d-flex justify-content-center">
           <img :src="imgUrl" alt="">
         </div>
-        <div class="card-title">{{card.title}}</div>    
-        <div class="card-title">{{card.original_title}}</div>
-        <div class="card-lenguage">{{card.original_language}}</div>
+        <div class="card-title"><strong>Titolo:</strong> {{card.title}}</div>    
+        <div class="card-title"><strong>Titolo originale:</strong> {{card.original_title}}</div>
+        <div class="card-language"><strong>OL: </strong>{{card.original_language}}</div>
         <div class="d-flex">
+          <div><strong>Voto: </strong></div>
           <div class="star" v-for='i in vote'>si</div>
           <div class="not-star" v-for='i in missedStar'>no</div>  
         </div>
+        <div class="card-overview"><strong>Overview: </strong>{{card.overview}}</div>
+
     </div>
 </div>
 </template>
@@ -52,5 +55,9 @@ export default {
   width: 342px;
   min-height: 513px;
   background-color: black;
+}
+
+.card-infos>div {
+  margin-top: 10px;
 }
 </style>
