@@ -1,10 +1,12 @@
 <script>
-import CardMaker from './CardMaker.vue'
+import CardMakerFilm from './CardMakerFilm.vue'
+import CardMakerSeries from './CardMakerSeries.vue'
 import { store } from "../store";
 export default {
     name: 'CardsList',
     components: {
-        CardMaker
+        CardMakerFilm,
+        CardMakerSeries
     },
 
     data() {
@@ -20,7 +22,10 @@ export default {
 </script>
 <template lang="">
     <div class="col" v-for="(card, index) in store.arrayFilms" :key="index">
-        <CardMaker :card='card'/>
+        <CardMakerFilm :card='card'/>
+    </div>
+    <div class="col" v-for="(card, index) in store.arraySeries" :key="index">
+        <CardMakerSeries :card='card'/>
     </div>
 </template>
 <style lang="">

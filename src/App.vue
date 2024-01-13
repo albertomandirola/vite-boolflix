@@ -20,14 +20,21 @@ export default {
     reciveEmit() {
       //create variable that allow us to create the filtered arrey
       let urlFilteredFilms = `${store.urlFilms}${store.apiKey}&query=${store.searchValue}`
-
+      let urlFilteredSeries = `${store.urlSeries}${store.apiKey}&query=${store.searchValue}`
       //array with the scope of contain the serched film
       store.arrayFilms = [];
+      store.arraySeries = [];
 
       //creation of it with axios
       axios.get(urlFilteredFilms).then(response => {
         store.arrayFilms = [...response.data.results];
         console.log(store.arrayFilms);
+
+      })
+
+      axios.get(urlFilteredSeries).then(response => {
+        store.arraySeries = [...response.data.results];
+        console.log(store.arraySeries);
 
       })
 
@@ -42,12 +49,8 @@ export default {
   <div>
     <header>
       <SearchBar @SearchTitle='reciveEmit' />
-      
-
     </header>
     <main><CardsList /></main>
   </div>
 </template>
-<style lang="">
-  
-</style>
+<style lang="scss" scoped></style>
