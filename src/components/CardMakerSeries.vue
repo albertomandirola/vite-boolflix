@@ -32,9 +32,11 @@ export default {
         <div class="card-title">{{card.name}}</div>    
         <div class="card-title">{{card.original_name}}</div>
         <img :src="FlagUrl">   
-        <div class="card-vot" v-for='i in vote'>ciao</div>
-        <div class="card-vot" v-for='i in missedStar'>bella</div>   
+        <div class="card-vot" v-for='i in vote'><i class="bi bi-star"></i></div>
+        <div class="card-vot" v-for='i in missedStar'><i class="bi bi-star"></i></div>   
     </div>
 </div>
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss" >
+@use '../styles/partials/bootstrap' as *;
+</style>

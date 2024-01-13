@@ -22,4 +22,6 @@ export default {
     </div>
 </div>
 </template>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../styles/partials/bootstrap'
+</style>
