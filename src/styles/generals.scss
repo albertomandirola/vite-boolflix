@@ -3,3 +3,19 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+header {
+    background-color: black;
+    color: white;
+}
+
+main {
+    background-color: rgb(29, 28, 28);
+    color: white;
+    padding-top: 30px;
+    min-height: 100vh;
+}
+
+.col-12 {
+    background-color: black;
+}

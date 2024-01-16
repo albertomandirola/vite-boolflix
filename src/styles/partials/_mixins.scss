@@ -1,0 +1,54 @@
+@mixin card {
+    width: 342px;
+    height: 513px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+
+
+    &:hover {
+        transform: rotateY(-180deg);
+    }
+
+
+    .poster-container,
+    .card-infos {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+
+    .poster-container {
+
+
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    .card-infos {
+        transform: rotateY(-180deg);
+        text-align: center;
+        background-color: black;
+
+
+        .color_yellow {
+            color: rgb(255, 225, 0);
+        }
+
+        .lang-icon {
+            background-image: url(../assets/lang-flags.png);
+        }
+
+    }
+
+    .card-infos>div {
+        margin-top: 10px;
+    }
+}

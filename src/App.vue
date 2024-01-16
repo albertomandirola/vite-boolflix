@@ -46,7 +46,7 @@ export default {
 }
 </script>
 <template lang="">
-  <div class="bg-black">
+  <div>
     <header>
       <div class="container d-flex justify-content-between">
         <img :src="store.urlLogo" alt="">

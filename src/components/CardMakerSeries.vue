@@ -13,10 +13,9 @@ export default {
     },
     computed: {
         FlagUrl() {
-
             return `https://flagsapi.com/${this.card.origin_country[0]}/flat/24.png`
         },
-        vote() {
+        Star() {
             return Math.ceil(this.card.vote_average / 2)
         },
         missedStar() {
@@ -40,21 +39,20 @@ export default {
 </script>
 <template lang="">
 <div class="my-card">
+    <div class='poster-container '>
+        <img :src="imgUrl" alt="">
+    </div>
     <div class="card-infos">
-        <div class='poster-container'>
-            <img :src="imgUrl" alt="">
-        </div>
-        
         <div class="card-title"><strong>Titolo:</strong> {{card.name}}</div>    
         <div class="card-title"><strong>Titolo originale:</strong> {{card.original_name}}</div>
-        <div class='card-original-language d-flex align-items-center'>
+        <div class='card-original-language d-flex align-items-center justify-content-center'>
             <div><strong>OL: </strong></div>
             <img :src="FlagUrl"> 
         </div>
-        <div class="d-flex">
+        <div class="d-flex justify-content-center">
           <div><strong>Voto: </strong></div>
-          <div class="star" v-for='i in vote'>si</div>
-          <div class="not-star" v-for='i in missedStar'>no</div>  
+          <div v-for='i in Star'><i class='bi bi-star-fill color_yellow'></i></div>
+          <div v-for='i in missedStar'><i class='bi bi-star'></i></div>  
         </div>  
     </div>
 </div>
@@ -62,14 +60,9 @@ export default {
 <style lang="scss" scoped >
 @use '../styles/generals.scss' as *;
 @use '../styles/partials/bootstrap' as *;
+@use '../styles/partials/mixins' as *;
 
-.poster-container {
-    width: 342px;
-    min-height: 513px;
-    background-color: black;
-}
-
-.card-infos>div {
-    margin-top: 10px;
+.my-card {
+    @include card;
 }
 </style>

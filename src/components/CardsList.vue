@@ -22,12 +22,18 @@ export default {
 </script>
 <template lang="">
     <div class="row justify-content-center gap-3">
-        <div class="my-col border" v-for="(card, index) in store.arrayFilms" :key="index">
+        <div class="col-12">
+            Film correlati alla ricerca
+        </div>
+        <div class="my-col " v-for="(card, index) in store.arrayFilms" :key="index">
             <CardMakerFilm :card='card'/>
         </div>
     </div>
     <div class="row justify-content-center gap-3">
-        <div class="my-col border" v-for="(card, index) in store.arraySeries" :key="index">
+        <div class="col-12 pt-3">
+            Serie tv correlate alla ricerca
+        </div>
+        <div class="my-col " v-for="(card, index) in store.arraySeries" :key="index">
             <CardMakerSeries :card='card'/>
         </div>
     </div>
@@ -40,5 +46,6 @@ export default {
 
 .my-col {
     width: 342px;
+    padding: 0px;
 }
 </style>
