@@ -22,15 +22,15 @@ export default {
 </script>
 <template lang="">
     <div class="row justify-content-center gap-3">
-        <div class="col-12">
+        <div class="col-12 py-3 " v-if="store.arrayFilms != 0 ? true : false">
             Film correlati alla ricerca
         </div>
-        <div class="my-col " v-for="(card, index) in store.arrayFilms" :key="index">
+        <div class="my-col" v-for="(card, index) in store.arrayFilms" :key="index">
             <CardMakerFilm :card='card'/>
         </div>
     </div>
     <div class="row justify-content-center gap-3">
-        <div class="col-12 pt-3">
+        <div class="col-12 py-3 " v-if="store.arraySeries != 0 ? true : false">
             Serie tv correlate alla ricerca
         </div>
         <div class="my-col " v-for="(card, index) in store.arraySeries" :key="index">
